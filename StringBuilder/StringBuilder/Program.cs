@@ -19,10 +19,15 @@ namespace StringBuilders
             var builder = new StringBuilder();
             foreach (var item in details)
             {
-                builder.Append($"{item.TaxTypeName}:{item.Percentage}+{item.TaxTypeName}: {item.Percentage}");
-
-            };
-            Console.WriteLine(builder);
+                
+                builder.Append(item.TaxTypeName);
+                builder.Append(":");
+                builder.Append(item.Percentage);
+                builder.Append("%");
+                builder.Append("+");
+          };
+            var result = builder.Remove(18, 1);
+            Console.WriteLine("Total GST: {0}", result);
 
 
             Console.ReadLine();
